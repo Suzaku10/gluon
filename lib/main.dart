@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             InkWell(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => LogicTestPage(title: widget.title))),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const LogicTestPage(title: 'Converter App'))),
               child: const Card(
                 color: Colors.blue,
                 child: SizedBox(

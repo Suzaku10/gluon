@@ -36,6 +36,10 @@ class _LogicTestPageState extends State<LogicTestPage> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            const Text(
+              'Please enter an integer number in the "Input" box and tap on "Convert" to see the equivalent in words appear in the "Output" box.',
+              textAlign: TextAlign.justify,
+            ),
             Form(
               key: key,
               child: CustomTextField(
@@ -62,17 +66,18 @@ class _LogicTestPageState extends State<LogicTestPage> {
               tooltipMessage: '',
               isReadOnly: true,
             ),
-
-            ElevatedButton(onPressed: (){
-               try {
-                 final input = int.parse(controller.text);
-                 if (input > 999999999999999) throw Exception('limit reached more than 999999999999999');
-                 resController.text = NumberToWords.convert(input);
-               } catch (e) {
-                 resController.clear();
-                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
-               }
-            }, child: const Text('Convert')),
+            ElevatedButton(
+                onPressed: () {
+                  try {
+                    final input = int.parse(controller.text);
+                    if (input > 999999999999999) throw Exception('limit reached more than 999999999999999');
+                    resController.text = NumberToWords.convert(input);
+                  } catch (e) {
+                    resController.clear();
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+                  }
+                },
+                child: const Text('Convert')),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.

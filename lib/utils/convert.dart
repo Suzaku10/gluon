@@ -1,5 +1,5 @@
 class NumberToWords {
-  static final List<String> units = [
+  static const List<String> units = [
     "",
     "thousand",
     "million",
@@ -7,7 +7,7 @@ class NumberToWords {
     "trillion",
   ];
 
-  static final List<String> belowTwenty = [
+  static const List<String> belowTwenty = [
     "",
     "one",
     "two",
@@ -30,7 +30,7 @@ class NumberToWords {
     "nineteen",
   ];
 
-  static final List<String> tens = [
+  static const List<String> tens = [
     "",
     "",
     "twenty",
